@@ -34,3 +34,31 @@ const obj = {
 
 obj.functionDeclaration();
 obj.functionExpression();
+
+
+
+// Example 2: Anonymous Functions
+
+// function (name){
+//     console.log(name)
+// }
+
+/*  - Above is a anonymous function.
+    - It will result an Error -> Syntax Error: Require function name
+    - Is used as function expression or in objects
+
+*/
+
+
+
+// Example 3: Functions as First Class Functions
+
+function add (num1, num2){
+    return num1 + num2
+}
+
+function squareOfAddition(fn){
+    console.log(fn * fn);
+}
+
+squareOfAddition(add(4,5));
