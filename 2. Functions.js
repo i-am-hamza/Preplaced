@@ -136,10 +136,84 @@ for(let i = 1; i < 5; i++){
 }
 
 
+// 3.1 Parameters and Functions
+function paramFunctions(a){                     // parameter
+    console.log(a);
+}
+
+paramFunctions(5)                               // arguments
+
+
+// 3.2 Spread and Rest Operator
+
+function multiply(...nums){                     // rest operator
+    console.log(nums[0] * nums[1]);
+}
+
+let mult = [2, 6];
+
+multiply(...mult);                              // spread operator
+
+
+var fn = function (a, b, ...arr){
+    console.log(a, b, arr);                  // spread or rest operator should be always be placed in the last of the args or params
+}
+
+fn(2, 4, 6, 9, 10, 14);
 
 // Example 4: Arrow Functions 
 
+const addNumbers = (data1, data2) => {
+    return data1 + data2;
+}
 
+console.log(addNumbers(3, 4))
+
+
+// Difference between Arrow Functions and Normal Functions
+
+// 4.1 Syntax
+
+function square(num){
+    return num * num;
+}
+
+const squareArrow = (num) => {
+    return num * num;
+}
+
+//4.2 Implicit "return" function
+const squareWithoutReturn = (num) => num * num;
+
+// 4.3 Arguments 
+function square(){
+     console.log(arguments);
+     console.log(typeof arguments);
+}
+
+square(1,2,3)
+
+const arrowArgs = () =>{
+    console.log(arguments);
+}
+
+// arrowArgs(4,5,6);
 
 
 // Example 5: Callback Functions
+
+// function
+function greet(name, callback) {
+    console.log('Hi' + ' ' + name); // Hi Hamza
+    callback();                     // I am callback function
+}
+
+// callback function
+function callMe() {
+    console.log('I am callback function');
+}
+
+// passing function as an argument
+greet('Hamza', callMe);
+
+
