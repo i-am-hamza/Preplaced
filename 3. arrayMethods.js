@@ -70,6 +70,14 @@ const newArrMap = array.map((num, i, array)=>{
 console.log(newArrMap);
 
 
+// uppercase 
+const name = ['alan', 'wanda', 'maxwell']
+const nameUppercase = name.map((value)=>{
+    return value.toUpperCase();
+})
+
+console.log(nameUppercase);
+
 // filter - creates a new array by applying a conditional statement on each element of the exiting array
 const newArrFilter = array.filter((num, i, array)=>{
     return num > 4;
@@ -84,3 +92,57 @@ const sumReduce = array.reduce((prev, curr, i, array)=>{
 }, 0)
 
 console.log(sumReduce);
+
+
+// Output based questions on array methods - map, filter and reduce
+
+let students = [
+    {name: 'Piyush', rollNumber: 31, marks: 80},
+    {name: 'Jenny', rollNumber: 15, marks: 69},
+    {name: 'Kaushal', rollNumber: 16, marks: 35},
+    {name: 'Dilpreet', rollNumber: 7, marks: 35}
+]
+
+
+// Q1 - Return all student names in capital letters
+
+// using for loop
+
+const studentForUpper = []
+
+for(let  i= 0;  i< students.length; i++) {
+        studentForUpper.push(students[i].name.toUpperCase())        
+}
+
+console.log(studentForUpper);
+console.log(students);
+
+// using map function
+const studentMapUpper = students.map((stu)=>{return stu.name.toUpperCase()})
+console.log(studentMapUpper);
+
+
+//Q2. Return details of only those who scored less than 60
+// filter
+let studentFilter = students.filter((stu) => stu.marks < 60)
+console.log(studentFilter);
+
+//Q3. Return details of only those who scored more than 60 and roll number greater than 15
+let goodStudents = students.filter((stu)=> stu.marks > 60 && stu.rollNumber > 15 )
+console.log(goodStudents);
+
+
+//Q4. Return sum of all marks
+// reduce
+
+let sumMarks = students.reduce((prev, curr, i, students)=>{
+    return prev + curr.marks
+}, 0)
+console.log(sumMarks);
+
+
+// Q5. Return only names of those who scored more than 60
+let nameStudent = students.filter((stu)=> stu.marks > 60).map((stu)=>stu.name)
+console.log(nameStudent);
+
+

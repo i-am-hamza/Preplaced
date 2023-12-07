@@ -183,7 +183,13 @@ const squareArrow = (num) => {
 }
 
 //4.2 Implicit "return" function
-const squareWithoutReturn = (num) => num * num;
+const squareWithoutReturn = (num) => num * num;     
+const squareFunction = function (num){
+    console.log(num * num);
+}
+
+console.log(squareFunction());                      // undefined
+
 
 // 4.3 Arguments 
 function square(){
@@ -215,5 +221,7 @@ function callMe() {
 
 // passing function as an argument
 greet('Hamza', callMe);
+
+
 
 
