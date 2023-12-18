@@ -13,7 +13,7 @@ console.log(totalNumbers);
 const cars = ['BMW', 'Audi', 'Ferrari', 'Tesla']
 
 let carsString = cars.toString()
-console.log(carsString);
+console.log(carsString);                // BMW AUDI Ferrari Tesla 
 console.log(typeof carsString);
 
 
@@ -44,6 +44,7 @@ console.log(cars[3]);       // undefined
 
 
 cars[3] = 'Nissan';
+ 
 
 // concat - merge two arrays and creates a new array
 
@@ -62,7 +63,7 @@ console.log(newArr);
 
 
 // map - creates a new array from an existing array by applying a function to each of the elements.
-const array = [1, 2, 3, 4, 5, 6, 7, 8]
+const array = [1, 2, 3]
 const newArrMap = array.map((num, i, array)=>{
     return num * num;
 })
@@ -87,11 +88,13 @@ console.log(newArrFilter);
 
 
 // reduce - creates a new array by reducing the existing array by applying function to each element and accumulating the result
+let arr2 = [1,2, 4, 5, 6]
+
 const sumReduce = array.reduce((prev, curr, i, array)=>{
     return prev + curr;
-}, 0)
+}, arr2)
 
-console.log(sumReduce);
+// console.log(sumReduce);
 
 
 // Output based questions on array methods - map, filter and reduce
@@ -146,3 +149,15 @@ let nameStudent = students.filter((stu)=> stu.marks > 60).map((stu)=>stu.name)
 console.log(nameStudent);
 
 
+
+
+
+const arr1 = [1, 2, [3, 4], [3, 3, 8], 7, 8]
+console.log(arr1.flat(2));
+
+
+// [1, 2, 3, 4, [3, 3, 8], 7, 8]
+
+
+
+console.log(typeof sumReduce);
