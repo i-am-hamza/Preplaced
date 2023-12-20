@@ -110,9 +110,57 @@ console.log(JSON.parse(strobj)); //{ name: 'Piyush', age: 24 }
 // Use case of stringify and parse
 // used in localStorage for storing data
 
-localStorage.setItem('key', strobj)
+// localStorage.setItem('key', strobj)
 
-console.log(localStorage.getItem('key'));
+// console.log(localStorage.getItem('key'));
+
+
+// Spread Operator
+
+console.log([..."Karan"]); // "K","a","r","a","n"
+console.log(typeof [..."Karan"]); // object
+
+
+const user2 = { name: "Lydia", age: 21 };
+const admin = { admin: true, ...user2 };
+console.log(admin); // { admin: true, name: 'Lydia', age: 21 }
+
+const settings = {
+    username: "Piyush",
+    level: 19,
+    health: 90,
+};
+const data = JSON.stringify(settings, ["level", "health"]);
+console.log(data); //{"level":19,"health":90}
+
+
+const shape ={
+    radius: 10,
+    diameter() {
+    return this.radius * 2;
+    },
+    perimeter: () => 2 * Math.PI * this.radius,
+};
+    console.log(shape.diameter());  // 20 ---> references to the object shape
+    console.log(shape.perimeter()); // NaN ---> references to the window object
+
+
+
+
+
+// Destructuring in JavaScript
+
+const person1 = { name1: 'John', age: 30 };
+const { name1, age } = person1;
+
+console.log(name1); // Output: John
+console.log(age);  // Output: 30
+
+
+
+
+
+
 
 
 
