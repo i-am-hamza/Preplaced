@@ -94,6 +94,28 @@ coversion of object into string results into creation of property as 'Object Obj
 
 */ 
 
+// Question 4 - What's JSON.stringify and JSON.parse ?
+const user1 = {
+    name: "Piyush",
+    age: 24,
+    };
+console.log(JSON.stringify(user1)); // {"name":"Piyush","age":24}
+
+
+const strobj = JSON.stringify(user1);
+
+console.log(JSON.parse(strobj)); //{ name: 'Piyush', age: 24 }
+
+
+// Use case of stringify and parse
+// used in localStorage for storing data
+
+localStorage.setItem('key', strobj)
+
+console.log(localStorage.getItem('key'));
+
+
+
 
 
 
