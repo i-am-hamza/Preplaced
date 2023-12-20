@@ -157,13 +157,80 @@ console.log(name1); // Output: John
 console.log(age);  // Output: 30
 
 
+// Renaming Variables:
+
+const { name1: personName, age: personAge } = person1;
+
+console.log(personName); // Output: John
+console.log(personAge);  // Output: 30
+
+// Destructing from nested objects
+
+let user5 = {
+    name: "Max",
+    age: 24,
+    fullName: {
+    first: "Carlos",
+    last: "Pablo",
+    },
+};
+const name4 = "Roadside Coder";
+const { fullName:{first} } = user5;
+console.log (first); // Carlos
+
+
+// Object Referencing
+
+let e = { greeting: "Hey!" };
+let d;
+
+d = e;
+e.greeting = "Hello";
+console.log(d.greeting); // Hello ---> Objects are referenced
+
+
+console.log({ a: 1 } == { a: 1 }); // false
+console.log({ a: 1 } === { a: 1 }); // false
+
+let person3 = { name: "Lydia" };
+const members = [person3];
+person3.name= null;
+console.log(members[0])
+console.log(person3);
+
+
+const value = { number: 10 };
+const multiply = (x = { ...value }) => {
+console.log((x.number *= 2));
+};
+
+multiply(); // 20
+multiply(); // 20
+multiply (value); // 20
+multiply (value); // 40
+
+
+// Output based question
+function changeAgeAndReference (person) {
+    person.age = 25;
+    person = {
+        name: "John",
+        age: 50,
+    }; 
+    return person;
+}
+const personObj1 = {
+    name: "Alex",
+    age: 30,
+};
+const personObj2 = changeAgeAndReference (personObj1);
+console.log(personObj1); // { name: 'Alex', age: 25 }
+console.log (personObj2); // { name: 'John', age: 50 }
 
 
 
-
-
-
-
-
+// To be covered:
+// 1. Shalow copy
+// 2. Deep copy
 
 
