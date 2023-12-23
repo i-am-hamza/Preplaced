@@ -2,12 +2,17 @@
 
 var obj = {name: 'Hamza'}
 
-function sayHello(age, profession){
+function sayHello(age){
+    console.log(age);
+    // console.log(profession);
     return "Hello " + this.name + " is " + age;
 }
 
+const bindFunc = sayHello.bind(obj, 23);
+console.log(bindFunc('Artist'), 46);
 
-console.log(sayHello.call(obj, 23));
+
+// console.log(sayHello.call(obj, 23));
 
 
 // Apply function
@@ -16,67 +21,66 @@ function sayHello2(age, profession){
     return "Hello " + this.name + " is " + age + " and is a " + profession;
 }
 
-console.log(sayHello2.apply(obj, [23, "Consultant"]));
+// console.log(sayHello2.apply(obj, [23, "Con"]));
 
 
 // Bind function
 
-const bindFunc = sayHello.bind(obj);
-console.log(bindFunc(23));
+
 
 
 // Output Based Questions
 
 // Q1. 
 
-const age = 10;
+// const age = 10;
 
-var person = {
-    name: "Hamza",
-    age: 23,
-    getAge: function(){
-        return this.age;
-    },
-};
+// var person = {
+//     name: "Hamza",
+//     age: 23,
+//     getAge: function(){
+//         return this.age;
+//     },
+// };
 
-var person2 = {age: 24}
-console.log(person.getAge()); //23 
-console.log(person.getAge.call(person2)); // 24
-
-
-// Q2. Call printAnimals such that it prints all animals in object
-
-const animals = [
-    {species: "Lions", name: "King"},
-    {species: "Whale", name: "Queen"}
-];
-
-function printAnimals(i){
-    this.print = function(){
-        console.log("#" + i + " "+ this.species + ": "+ this.name);
-    };
-    this.print();
-}
-
-for(let i = 0; i < animals.length; i++){
-    printAnimals.call(animals[i], i);
-}
+// var person2 = {age: 24}
+// console.log(person.getAge()); //23 
+// console.log(person.getAge.call(person2)); // 24
 
 
-// Append an array to another array
-const array = ["a", "b"]
-const elements = [5, 1, 6, 3, 10];
+// // Q2. Call printAnimals such that it prints all animals in object
 
-array.push.apply(array,elements);
+// const animals = [
+//     {species: "Lions", name: "King"},
+//     {species: "Whale", name: "Queen"}
+// ];
 
-console.log(array);
+// function printAnimals(i){
+//     this.print = function(){
+//         console.log("#" + i + " "+ this.species + ": "+ this.name);
+//     };
+//     this.print();
+// }
+
+// for(let i = 0; i < animals.length; i++){
+//     printAnimals.call(animals[i], i);
+// }
 
 
-// Find min/ max from the array element using apply function
+// // Append an array to another array
+// const array = ["a", "b"]
+// const elements = [5, 1, 6, 3, 10];
 
-console.log(Math.max.apply(null, elements));
+// array.push.apply(array,elements);
 
-console.log(Math.min.apply(null, elements));
+// console.log(array);
+
+
+// // Find min/ max from the array element using apply function
+
+// console.log(Math.max.apply(null, elements));
+
+// console.log(Math.min.apply(null, elements));
 
 
 

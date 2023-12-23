@@ -73,8 +73,6 @@ function multiplyNumeric(obj){
     }
 }
 
-
-
 console.log(nums);
 
 
@@ -174,7 +172,7 @@ let user5 = {
     last: "Pablo",
     },
 };
-const name4 = "Roadside Coder";
+const name4 = "New Coder";
 const { fullName:{first} } = user5;
 console.log (first); // Carlos
 

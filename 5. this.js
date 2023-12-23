@@ -70,14 +70,15 @@ User.getName(); // Ben
 // Q1. 
 
 const user4 = {
-    firstName: "Mark",
+    // firstName: "Mark",
     getName(){
-        const firstName = "Zuckerburg";
+        firstName = "Zuckerburg";
         console.log(this.firstName);
     }
 }
 
 user4.getName(); // Mark
+console.log(user4.firstName);
 
 
 //Q2. 
