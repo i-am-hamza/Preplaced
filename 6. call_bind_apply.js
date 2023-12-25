@@ -38,7 +38,7 @@ const age = 10;
 var person = {
     name: "Hamza",
     age: 23,
-    getAge: function(){
+    getAge: () => {
         return this.age;
     },
 };

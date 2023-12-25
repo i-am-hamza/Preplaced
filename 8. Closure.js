@@ -10,7 +10,7 @@ function x(){
 	y();
 }
 
-// x();
+x();
 
 // Closures can be accessed even after the lexical scope is removed from the call stack.
 
@@ -132,18 +132,20 @@ console.log(counter.getValue());
 
 // 4. 
 
-// for (var i = 1; i <= 5; i++) {
-//     setTimeout(function() {
-//         console.log(i);
-//     }, i * 1000);
-// }
+for (var i = 1; i <= 5; i++) {
+    setTimeout(function() {
+        console.log(i);
+    }, i * 1000);
+}
 
 
-// for (let i = 1; i <= 5; i++) {
-//     setTimeout(function() {
-//         console.log(i);
-//     }, i * 1000);
-// }
+
+
+for (let i = 1; i <= 5; i++) {
+    setTimeout(function() {
+        console.log(i);
+    }, i * 1000);
+}
 
 
 // 5. 
