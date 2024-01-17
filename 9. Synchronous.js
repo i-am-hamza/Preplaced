@@ -19,7 +19,7 @@ var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
 console.log("Today is", dayList[date], ".");
 
 var hour = today.getHours();
-var minutes = today.getMinutes();
+var minute = today.getMinutes();
 var seconds = today.getSeconds();
 
 var prepand = (hour >= 12)? "PM":"AM";
@@ -46,4 +46,4 @@ if (hour === 0 && prepand === 'AM'){
     }
 }
 
-console.log("Time is", hour + prepand + " : " + minute +  + seconds);
+console.log("Time is", hour + prepand + " : " + minute + " : " + seconds);
