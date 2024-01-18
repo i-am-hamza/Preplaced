@@ -145,3 +145,46 @@ let calculator = {
 // calculator.read()
 // console.log(calculator.sum());
 // console.log(calculator.mult());
+
+// ----------------------------------------------------------------------
+
+
+// this in global scope
+
+console.log(this); // globalObject
+
+// this in function scope
+
+function x(){
+    console.log(this);
+}
+
+
+
+// this keyword value depends on how the function is called.
+x(); // undefined
+window.x(); // window
+
+
+// this inside a object's method
+
+ const obj = {
+    a: 20,
+    x: function (){             // here this function x is called as method
+        console.log(this);
+    }
+ }
+
+ obj.x()
+
+
+ // this keyword uses in call, bind and apply functions
+
+ const student1 = {
+    name: "Hammas",
+    printName: function(){
+        console.log(this.name);
+    }
+ }
+
+ 
